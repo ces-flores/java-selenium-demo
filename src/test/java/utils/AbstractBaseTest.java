@@ -2,6 +2,7 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
@@ -18,7 +19,7 @@ public abstract class AbstractBaseTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-    @AfterTest
+    @AfterMethod
     public void cleanTest() {
         driver.manage().deleteAllCookies();
         driver.quit();
