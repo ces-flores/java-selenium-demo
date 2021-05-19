@@ -6,7 +6,6 @@ import pages.ProductDetailsPage;
 import pages.SearchBarModule;
 import pages.SearchResultPage;
 import pages.ShoppingCartPage;
-import utils.AbstractBaseTest;
 
 public class Search extends AbstractBaseTest {
 

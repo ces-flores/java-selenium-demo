@@ -1,10 +1,10 @@
-package utils;
+package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import utils.PropertiesConfiguration;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,9 +14,9 @@ public abstract class AbstractBaseTest {
 
     @BeforeClass
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", PropertiesConfiguration.BROWSER_DRIVER);
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(PropertiesConfiguration.DEFAULT_WAIT_TIME, TimeUnit.SECONDS);
     }
 
     @AfterMethod
